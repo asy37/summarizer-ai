@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export const Welcome = () => {
   return (
     <div className="min-h-screen from-blue-50 to-indigo-100 flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center">
@@ -63,4 +63,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};

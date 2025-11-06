@@ -10,7 +10,7 @@ interface Summary {
   createdAt: string;
 }
 
-export default function SummarizePage() {
+export const Summarize = () => {
   const [text, setText] = useState("");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,6 @@ export default function SummarizePage() {
   const [showHistory, setShowHistory] = useState(false);
   const [histories, setHistories] = useState<Summary[]>([]);
 
-  // Load from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem("summaries");
     if (stored) {
@@ -89,7 +88,6 @@ export default function SummarizePage() {
 
       setSaved(true);
 
-      // Save to localStorage as well
       const newSummary: Summary = {
         id: data.data.id,
         originalText: text,
@@ -100,7 +98,6 @@ export default function SummarizePage() {
       setHistories(updated);
       localStorage.setItem("summaries", JSON.stringify(updated));
 
-      // Clear form after 2 seconds
       setTimeout(() => {
         setText("");
         setSummary("");
@@ -224,4 +221,4 @@ export default function SummarizePage() {
       </div>
     </div>
   );
-}
+};
