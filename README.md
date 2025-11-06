@@ -54,7 +54,7 @@ npm run dev
 ```
 
 Uygulama [http://localhost:3000](http://localhost:3000) adresinde çalışacaktır.
-
+Demo https://nextsummarizeai.netlify.app
 ## 📁 Proje Yapısı
 
 ```
