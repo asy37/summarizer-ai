@@ -23,10 +23,10 @@ export async function POST(request: NextRequest) {
       success: true,
       data: savedSummary,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Save summary error:", error);
     return NextResponse.json(
-      { error: error.message || "Özet kaydedilirken bir hata oluştu" },
+      { error: error instanceof Error ? error.message : "Özet kaydedilirken bir hata oluştu" },
       { status: 500 }
     );
   }

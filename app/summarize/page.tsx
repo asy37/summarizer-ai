@@ -1,7 +1,7 @@
-import { Summarize } from "@/features/summarize/Summarize";
+import { SummarizeView } from "@/features/summarize/view";
 
-const SummarizePage = () => {
-  return <Summarize />;
+export default function Summarize() {
+  return <SummarizeView />;
 };
 
-export default SummarizePage;
+

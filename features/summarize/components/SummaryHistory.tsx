@@ -11,7 +11,7 @@ interface SummaryHistoryProps {
   histories: Summary[];
 }
 
-export default function SummaryHistory({ histories }: SummaryHistoryProps) {
+export const SummaryHistory = ({ histories }: SummaryHistoryProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("tr-TR", {
@@ -80,4 +80,5 @@ export default function SummaryHistory({ histories }: SummaryHistoryProps) {
       </div>
     </div>
   );
-}
+};
+

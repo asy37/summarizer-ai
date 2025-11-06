@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const summaries = await prisma.summary.findMany({
       orderBy: {
@@ -14,10 +14,10 @@ export async function GET(request: NextRequest) {
       success: true,
       data: summaries,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Fetch summaries error:", error);
     return NextResponse.json(
-      { error: error.message || "Özetler yüklenirken bir hata oluştu" },
+      { error: error instanceof Error ? error.message : "Özetler yüklenirken bir hata oluştu" },
       { status: 500 }
     );
   }

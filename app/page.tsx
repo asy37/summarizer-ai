@@ -1,5 +1,5 @@
-import WelcomePage from "./welcome/page";
+import { HomeView } from "@/features/home/view";
 
 export default function Home() {
-  return <WelcomePage />;
+  return <HomeView />;
 }
