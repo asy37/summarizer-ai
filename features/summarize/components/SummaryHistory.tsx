@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "react-toastify";
+
 interface Summary {
   id: string;
   originalText: string;
@@ -25,7 +27,7 @@ export const SummaryHistory = ({ histories }: SummaryHistoryProps) => {
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
-    alert("Özet panoya kopyalandı!");
+    toast("Özet panoya kopyalandı!");
   };
 
   if (histories.length === 0) {
@@ -56,7 +58,7 @@ export const SummaryHistory = ({ histories }: SummaryHistoryProps) => {
               </span>
               <button
                 onClick={() => handleCopy(item.summary)}
-                className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+                className="text-sm text-indigo-600 hover:text-indigo-700 font-medium cursor-pointer"
               >
                 📋 Kopyala
               </button>

@@ -22,7 +22,7 @@ export const SummaryActions: React.FC<Props> = ({
             <h3 className="text-lg font-semibold text-gray-900">Özet</h3>
             <button
               onClick={handleCopy}
-              className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+              className="text-sm text-indigo-600 hover:text-indigo-700 font-medium cursor-pointer"
             >
               📋 Kopyala
             </button>

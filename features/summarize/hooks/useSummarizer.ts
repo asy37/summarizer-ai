@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export interface Summary {
   id: string;
@@ -103,7 +104,7 @@ export function useSummarizer() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(summary);
-    alert("Özet panoya kopyalandı!");
+    toast("Özet panoya kopyalandı!");
   };
 
   return {
